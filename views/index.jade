@@ -1,0 +1,81 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title ReSA: Real-time Semantic Analysis ->Twitter Entities Heatmap
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css')
+        script(src="//code.jquery.com/jquery-1.9.1.min.js")
+        script(src="components/socket.io-client/dist/socket.io.min.js")
+        script(src="//d3js.org/d3.v3.min.js")
+        script(src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js")
+        script(src="/javascripts/linkify.js")
+        script(src="/javascripts/utilities.js")
+        script(src="/javascripts/script.js")
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') ReSA
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='#') Home
+            li
+              a(href='#about') About
+            li
+              a(href='#contact') Contact
+          .navbar-form.navbar-right
+            .form-group
+              input#keyword.form-control(type="text",placeholder="Keyword to monitor")
+              button#process_btn.btn.btn-success(onclick="startAnalyzing();",title="Start")
+               i.glyphicon.glyphicon-play
+              button#reset_btn.btn(onclick="stopAnalyzing();",title="Reset")
+               i.glyphicon.glyphicon-stop
+        //
+          /.navbar-collapse
+    //
+       Main jumbotron for a primary marketing message or call to action
+    .jumbotron
+      .container
+        h1
+          |Real-time Semantic Analysis: Twitter Stream
+        p
+          | This application uses Node.js to create a streaming connection between it and Twitter.
+          | Any mentions of the entities in Wikipedia are then broadcasted by analyzing tweets using DBpedia Spotlight.
+        p
+          | Last updated:
+          span(id="last-update") Never
+          | &nbsp; Number of Tweets:
+          b(id="tweets_no")
+            | Number of Tweets
+          | &nbsp; Number of Entities:
+          b(id="symbols_no")
+            | Number of Entities
+    .container
+      //
+         Example row of columns
+      .row
+        #main_content.col-xs-12.col-md-8
+          ul.nav.nav-tabs
+            li.active
+              a(data-toggle="tab",href="#bubblecloud") Bubble Cloud
+            li
+              a(data-toggle="tab",href="#other") Other Views
+          #content.tab-content
+            #bubblecloud.tab-pane.active
+
+            #other.tab-pane
+        .col-xs-6.col-md-4
+          h2 Live Twitter Stream
+             span#hashtag.search-for
+          #tweets.well
+      hr
+      footer
+        p &copy; AKSW 2014
