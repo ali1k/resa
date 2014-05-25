@@ -7,7 +7,7 @@ ReSA is an extension of conTEXT platform for lightweight text analytics availabl
 How to install it?
 ====
 install required NodeJS modules:
-npm install
+- npm install
 
 configure DBpedia Spotlight endpoint and Twitter API keys:
 - open config.sample.js and fill in the required urls and keys
@@ -15,4 +15,4 @@ configure DBpedia Spotlight endpoint and Twitter API keys:
  
 
 To start NodeJS server:
-node app.js
+- node app.js
