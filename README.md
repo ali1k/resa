@@ -15,4 +15,7 @@ How to install it?
  
 
 3. To start NodeJS server:
- - node app.js
+ - node app.js [port number (default port is 5555)]
+
+4. Run the web browser
+ - http://localhost:5555 
