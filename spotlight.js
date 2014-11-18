@@ -9,7 +9,8 @@ exports.sendRequest=function(input, cb) {
         'support' : 20
     });
     var options={
-        host:config.get['spotlight_host'],
+        hostname:config.get['spotlight_host'],
+		port:config.get['spotlight_host_port'],
         path:config.get['spotlight_path'],
         method:'POST',
         headers:{

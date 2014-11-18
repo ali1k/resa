@@ -59,6 +59,7 @@ var start=function(watchSymbols,sockets) {
             }
             send_data=1;
             var tweet_text=tweet.text;
+// console.log("Tweet: " + tweet_text);
             //Make sure it was a valid tweet
             if (tweet_text !== undefined) {
 
