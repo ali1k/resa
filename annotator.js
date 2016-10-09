@@ -65,6 +65,7 @@ var start=function(watchSymbols,sockets) {
                 spotlight.sendRequest(tweet_text,function(output){
                     console.log('*********************************');
                     console.log(tweet_text);
+                    //console.log(output.Resources);
                     if(output.Resources !=undefined){
                         //store tweets on DB
                          db.get('tweetscollection').insert({"tweet_id":tweet.id,"user_name":tweet.user.screen_name,"created_at":tweet.created_at,"place":tweet.place,"processed":output});

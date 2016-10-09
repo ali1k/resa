@@ -10,7 +10,6 @@ var express = require('express')
 var annotator=require('./annotator.js');
 //Create an express app
 var app = express();
-
 //Create the HTTP server with the express app as an argument
 var server = http.createServer(app);
 var default_port=5555;

@@ -1,0 +1,7 @@
+node_modules
+bower_components
+build
+*.log
+logs/*.log
+tmp.js
+config.js
